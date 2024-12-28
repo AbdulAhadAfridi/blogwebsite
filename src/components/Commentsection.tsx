@@ -1,16 +1,19 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const CommentsSection = () => {
   const [comments, setComments] = useState<string[]>([]);
-  const [newComment, setNewComment] = useState<string>('');
+  const [newComment, setNewComment] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (newComment.trim() === '') return;
+    if (newComment.trim() === "") {
+      alert("Comment cannot be empty!");
+      return;
+    }
 
     setComments([...comments, newComment]);
-    setNewComment('');
+    setNewComment("");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,10 +33,12 @@ const CommentsSection = () => {
           value={newComment}
           onChange={handleChange}
           placeholder="Write a comment..."
+          aria-label="Write a comment"
           className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
         />
         <button
           type="submit"
+          aria-label="Post comment"
           className="px-6 py-3 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition-all"
         >
           Post
@@ -43,11 +48,16 @@ const CommentsSection = () => {
       {/* Comments list */}
       <div className="comments-list">
         {comments.length === 0 ? (
-          <p className="text-gray-500 dark:text-gray-400">No comments yet. Be the first to comment!</p>
+          <p className="text-gray-500 dark:text-gray-400">
+            No comments yet. Be the first to comment!
+          </p>
         ) : (
           <ul className="space-y-4">
             {comments.map((comment, index) => (
-              <li key={index} className="border-b pb-4 text-gray-700 dark:text-gray-300">
+              <li
+                key={index}
+                className="border-b pb-4 text-gray-700 dark:text-gray-300 transition-transform transform hover:scale-105"
+              >
                 <p>{comment}</p>
               </li>
             ))}

@@ -58,7 +58,7 @@ const Home = () => (
     </section>
     <section className="bg-blue-50 py-40 px-6 sm:px-12 lg:px-24">
       <div className="min-w-full mx-auto text-center">
-        <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+        <h1 className=" text-2xl md:text-4xl font-bold text-gray-900 sm:text-5xl">
           Empower Your Future—<span className="whitespace-nowrap">Through Learning</span>
         </h1>
         <p className="mt-4 text-lg text-gray-700">
@@ -75,29 +75,30 @@ const Home = () => (
     </section>
       
 
-    <div className=" bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
-// {/* Hero Section */}
-<div className="relative p-28 text-center bg-blue-500 text-white">
-  <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-    Welcome to <span className="text-yellow-300">EduSkill</span>
-  </h1>
-  <p className="mt-4 text-lg md:text-xl">
-    Empowering your journey in education and skill-building.
-  </p>
-  <div className="mt-6 space-x-4">
-    <Link href="/blogs" >
-    <button className="px-6 py-3 bg-yellow-300 text-blue-900 font-semibold rounded-lg shadow-lg hover:bg-yellow-400 transition-all">
-      Explore Blogs
-    </button>
-    </Link>
-    <Link href="#" >
-    <button className="px-6 py-3 bg-white text-blue-900 font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition-all">
-      Join Community
-    </button>
-    </Link>
+    <div className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
+  {/* Hero Section */}
+  <div className="relative p-8 sm:p-12 lg:p-28 text-center bg-blue-500 text-white">
+    <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight">
+      Welcome to <span className="text-yellow-300">EduSkill</span>
+    </h1>
+    <p className="mt-4 text-base sm:text-lg lg:text-xl">
+      Empowering your journey in education and skill-building.
+    </p>
+    <div className="mt-6 flex flex-col sm:flex-row sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+      <Link href="/blogs">
+        <button className="px-6 py-3 bg-yellow-300 text-blue-900 font-semibold rounded-lg shadow-lg hover:bg-yellow-400 transition-all">
+          Explore Blogs
+        </button>
+      </Link>
+      <Link href="#">
+        <button className="px-6 py-3 bg-white text-blue-900 font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition-all">
+          Join Community
+        </button>
+      </Link>
+    </div>
   </div>
 </div>
-</div> 
+
 <CommunitySection />
 
 

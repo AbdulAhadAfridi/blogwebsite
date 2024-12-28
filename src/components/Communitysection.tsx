@@ -5,7 +5,7 @@ export default function CommunitySection() {
     <section className="bg-gray-100 dark:bg-gray-900 py-16 mt-20 mb-28">
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-extrabold text-gray-800 dark:text-gray-100">
+          <h2 className="text-2xl md:text-5xl font-extrabold text-gray-800 dark:text-gray-100">
             Join Our Education and Skills Community
           </h2>
           <p className="mt-4 text-lg">

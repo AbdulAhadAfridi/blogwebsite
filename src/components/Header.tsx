@@ -3,6 +3,12 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
 import { FaSun, FaMoon } from "react-icons/fa"; // Import icons
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { Menu } from "lucide-react";
 
 // Header Component
 const Header = () => {
@@ -19,7 +25,7 @@ const Header = () => {
           height={50}
           className="mr-2"
         />
-        <h1 className="text-3xl font-extrabold text-blue-600 dark:text-blue-400 tracking-wide">
+        <h1 className="text-xl md:text-3xl font-extrabold text-blue-600 dark:text-blue-400 tracking-wide">
           <span className="text-green-500 dark:text-green-400">Edu</span>
           <span className="text-gray-700 dark:text-gray-300">Skill</span>
         </h1>
@@ -46,9 +52,37 @@ const Header = () => {
           Contact
         </Link>
       </nav>
+      <Sheet>
+            <SheetTrigger className="block md:hidden">
+              <Menu />
+            </SheetTrigger>
+            <SheetContent>
+            <nav className=" flex flex-col mt-16 gap-y-4">
+        <Link
+          href="/"
+          className="text-lg font-medium text-gray-600  hover:text-blue-600  transition-colors hover:curser-pointer"
+        >
+          Home
+        </Link>
+        <Link
+          href="/blogs"
+          className="text-lg font-medium text-gray-600  hover:text-green-500 dark:hover:text-green-400 "
+        >
+          Blogs
+        </Link>
+        <Link
+          href="/Contact"
+          className="text-lg font-medium text-gray-600  hover:text-blue-600 "
+        >
+          Contact
+        </Link>
+      </nav>
+              
+            </SheetContent>
+          </Sheet>
 
       {/* Right-side links and theme toggle */}
-      <div className="flex items-center space-x-6">
+      <div className="items-center space-x-6 hidden md:flex">
         <Link 
           href="/signin" 
           className="text-lg font-medium text-blue-600 dark:text-blue-400 hover:underline transition-all"
