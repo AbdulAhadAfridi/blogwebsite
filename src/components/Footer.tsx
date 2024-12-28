@@ -54,8 +54,8 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <p>Education & Skills Center</p>
             <p>123 Learning Road, Knowledge City</p>
-            <p>Email: info@eduskills.com</p>
-            <p>Phone: (123) 456-7890</p>
+            <p>Email: hafizabdulahadkhanafridi@gmail.com</p>
+            <p>Phone: 03128760904</p>
           </div>
         </div>
 

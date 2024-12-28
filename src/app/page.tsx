@@ -90,13 +90,16 @@ const Home = () => (
       Explore Blogs
     </button>
     </Link>
+    <Link href="#" >
     <button className="px-6 py-3 bg-white text-blue-900 font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition-all">
       Join Community
     </button>
+    </Link>
   </div>
 </div>
 </div> 
 <CommunitySection />
+
 
 </>
   
@@ -132,12 +135,4 @@ export default Home;
 
  
 
- {/* About Section
-  <div className="p-8 bg-gray-200 dark:bg-gray-800">
-    <h2 className="text-3xl font-bold text-center mb-6">About EduSkill</h2>
-    <p className="max-w-4xl mx-auto text-center text-gray-600 dark:text-gray-400">
-      EduSkill is dedicated to providing top-notch education and skill-building
-      resources. Our mission is to bridge the gap between learning and
-      professional development, ensuring every learner achieves their goals.
-    </p>
-  </div> */}
+ 

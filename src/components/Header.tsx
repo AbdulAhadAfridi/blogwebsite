@@ -2,10 +2,7 @@
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaSun,
-  FaMoon,
-} from "react-icons/fa"; // Import icons
+import { FaSun, FaMoon } from "react-icons/fa"; // Import icons
 
 // Header Component
 const Header = () => {
@@ -13,6 +10,7 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center p-4 shadow-lg bg-gray-100 dark:bg-gray-800">
+      {/* Logo and Title */}
       <div className="flex items-center">
         <Image
           src="/edukills.png"
@@ -26,7 +24,9 @@ const Header = () => {
           <span className="text-gray-700 dark:text-gray-300">Skill</span>
         </h1>
       </div>
-      <nav className="flex items-center space-x-6">
+
+      {/* Navigation for larger screens */}
+      <nav className="hidden md md:flex items-center space-x-6">
         <Link
           href="/"
           className="text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -47,32 +47,35 @@ const Header = () => {
         </Link>
       </nav>
 
+      {/* Right-side links and theme toggle */}
       <div className="flex items-center space-x-6">
-  <Link 
-    href="/signin" 
-    className="text-lg font-medium text-blue-600 dark:text-blue-400 hover:underline transition-all"
-  >
-    Sign In
-  </Link>
-  <Link 
-    href="/signup" 
-    className="text-lg font-medium text-green-500 dark:text-green-400 hover:underline transition-all"
-  >
-    Sign Up
-  </Link>
-  <button
-    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-    className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-  >
-    {theme === "dark" ? (
-      <FaSun className="text-yellow-400 text-xl" />
-    ) : (
-      <FaMoon className="text-blue-500 text-xl" />
-    )}
-  </button>
-</div>
+        <Link 
+          href="/signin" 
+          className="text-lg font-medium text-blue-600 dark:text-blue-400 hover:underline transition-all"
+        >
+          Sign In
+        </Link>
+        <Link 
+          href="/signup" 
+          className="text-lg font-medium text-green-500 dark:text-green-400 hover:underline transition-all"
+        >
+          Sign Up
+        </Link>
 
+        {/* Theme toggle button */}
+        <button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+        >
+          {theme === "dark" ? (
+            <FaSun className="text-yellow-400 text-xl" />
+          ) : (
+            <FaMoon className="text-blue-500 text-xl" />
+          )}
+        </button>
+      </div>
     </header>
   );
 };
+
 export default Header;

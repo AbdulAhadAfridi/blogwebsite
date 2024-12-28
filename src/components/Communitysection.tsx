@@ -17,7 +17,7 @@ export default function CommunitySection() {
           {/* Card 1 */}
           <div className="bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform hover:scale-[1.05] duration-500 hover:cursor-pointer">
             <FaChalkboardTeacher className="text-yellow-300 text-5xl mb-4" />
-            <h3 className="text-2xl font-semibold">Skill-Sharing Forums</h3>
+            <h3 className="text-2xl font-semibold">Skill-Sharing Forms</h3>
             <p className="mt-3">
               Engage in discussions, ask questions, and share expertise to build collective knowledge.
             </p>
