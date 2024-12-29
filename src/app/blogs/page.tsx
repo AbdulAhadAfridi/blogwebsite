@@ -4,14 +4,14 @@ import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import CommentsSection from '@/components/Commentsection';
 
-// interface BlogPost {
-//     id: number;
-//     title: string;
-//     description: string;
-//     image: string;
-//     category: string;
-//     date: string;
-// }
+interface BlogPost {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    category: string;
+    date: string;
+}
 
 // const blogPosts: BlogPost[] = [
 //     {
@@ -119,7 +119,7 @@ import CommentsSection from '@/components/Commentsection';
 
 export default async function Blogs() {
 
-  const data = await client.fetch(`*[_type == "blogpage"] {
+  const data: BlogPost[] = await client.fetch(`*[_type == "blogpage"] {
   id,
   title, 
   description,
@@ -127,7 +127,14 @@ export default async function Blogs() {
   category,
   date, 
 }`)
-
+interface Blog {
+  id: number;
+  title: string;
+  image: string;
+  category: string;
+  date: string;
+  description: string;
+}
     return (
         <>
 
@@ -143,7 +150,7 @@ export default async function Blogs() {
 
 
 <ul className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">  
-    {data.map((blog:any) => (
+    {data.map((blog: Blog) => (
         <li 
             key={blog.id}
             className="p-4 border rounded-lg shadow-md bg-white dark:bg-gray-800 hover:shadow-lg transform hover:scale-[1.05] duration-500"

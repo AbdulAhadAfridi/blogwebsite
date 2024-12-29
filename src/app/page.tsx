@@ -33,7 +33,6 @@ const Home = () => (
               words={["Your Skills", "Your Future", "Your Education"]}
               loop={true}
               cursor
-              cursorStyle="_"
               typeSpeed={80}
               deleteSpeed={50}
               delaySpeed={1000}
@@ -41,8 +40,8 @@ const Home = () => (
           </span>
         </h1>
         <p className="mt-4 text-xl sm:text-2xl font-light max-w-3xl">
-          "Education is the most powerful weapon which you can use to change
-          the world." — Nelson Mandela
+          Education is the most powerful weapon which you can use to change
+          the world. -Nelson Mandela
         </p>
         <div className="mt-8 flex items-center space-x-6">
           {/* Start Learning Button */}

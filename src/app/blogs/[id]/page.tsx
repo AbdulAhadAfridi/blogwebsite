@@ -3,15 +3,16 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
+import { PageProps } from "../../../../.next/types/app/page";
 
-export default async function BlogDetail({
-  params,
-}: {
+type BlogDetailProps = PageProps & {
   params: { id: string };
-}) {
+};
+
+export default async function BlogDetail({ params }: BlogDetailProps) {
   const { id } = params;
 
-  // Fetch the specific blog post based on the ID from the URL
+  // Fetch the blog post using the `id`
   const blog = await client.fetch(
     `*[_type == "blogPost" && id == $id] { id, title, subtitle, heroImage, paragraph }`,
     { id }
@@ -21,7 +22,7 @@ export default async function BlogDetail({
     return <p>Blog not found.</p>;
   }
 
-  const blogPost = blog[0]; // Access the first (and only) item from the result
+  const blogPost = blog[0];
 
   return (
     <div className="min-h-screen bg-gray-200 dark:bg-gray-800">
@@ -124,7 +125,7 @@ export default async function BlogDetail({
     <h2 className="text-xl sm:text-2xl font-semibold mb-3">Conclusion</h2>
     <p className="mb-6 leading-relaxed">
       Investing in education and skill-building is crucial for unlocking
-      potential and achieving sustainable success. It’s not just about acquiring
+      potential and achieving sustainable success. It is not just about acquiring
       knowledge but also about applying it effectively to create meaningful
       impact.
     </p>
